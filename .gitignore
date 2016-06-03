@@ -1,0 +1,5 @@
+.idea/
+build/
+components/
+node_modules/
+example/index.bundled.css

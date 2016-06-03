@@ -1,0 +1,25 @@
+{
+  "name": "@nib-styles/article-cards",
+  "version": "0.1.0",
+  "main.css": "index.scss",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nib-styles/article-cards.git"
+  },
+  "dependencies": {
+    "@nib-styles/colors": "^1.1.1",
+    "@nib-styles/sass-breakpoints": "^1.0.2",
+    "@nib-styles/sass-grid": "^0.3.0",
+    "@nib-styles/sass-spacing": "^1.0.0",
+    "@nib-styles/v2-icons": "~2.6.2",
+    "@nib-styles/v2-typography": "^4.2.0",
+    "sass-rems": "^1.0.0"
+  },
+  "devDependencies": {
+    "sass-composer": "^2.0.0-beta16"
+  },
+  "scripts": {
+    "build:example": "sass-composer example/index.scss -o example/index.bundled.css",
+    "build": "npm run build:example"
+  }
+}

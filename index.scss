@@ -1,0 +1,146 @@
+@import "@nib-styles/colors";
+@import "@nib-styles/v2-typography";
+@import "@nib-styles/v2-icons";
+@import "@nib-styles/sass-grid";
+@import "@nib-styles/sass-breakpoints";
+@import "@nib-styles/sass-spacing";
+@import "sass-rems";
+
+.article-cards {
+  font-size: 0; //stupid inline-block!!
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.article-card {
+  @include mx(1);
+  @include mb(2);
+  @include p(3);
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: rem(300px);
+  font-family: $font-stack-roboto;
+  text-decoration: none;
+  text-align: left;
+  border-top-width: rem(3px);
+  border-top-style: solid;
+  cursor: pointer;
+  vertical-align: top;
+
+  &:after {
+    position: absolute;
+    right: rem(15px);
+    top: rem(12px);
+  }
+
+  &--media {
+    color: $color-queen-elizabeth;
+    background-color: #e5f4e9;
+
+    @include v2-icon('megaphone', $size: 'smallest', $after: true) {
+      color: $color-queen-elizabeth;
+    }
+
+    &:hover {
+      background-color: #ccead3;
+      transition: background-color 0.25s;
+    }
+  }
+
+  &--health-cover {
+    color: #006d96;
+    background-color: #e5f0f4;
+
+    @include v2-icon('hospital', $size: 'smallest', $after: true) {
+      color: #006d96;
+    }
+
+    &:hover {
+      background-color: #cce2ea;
+      transition: background-color 0.25s;
+    }
+  }
+
+  &--healthy-life {
+    color: #ff0064;
+    background-color: #ffe5ef;
+
+    @include v2-icon('heartrate', $size: 'smallest', $after: true) {
+      color: #ff0064;
+    }
+
+    &:hover {
+      background-color: #ffcce0;
+      transition: background-color 0.25s;
+    }
+  }
+}
+
+.article-card__date {
+  @include mt(1);
+  @include mb(2);
+  @include copy('small', $color: 'grey');
+  font-size: rem(12px);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.article-card__title {
+  @include my(3);
+  height: rem(84px);
+  font-size: rem(23px);
+  font-weight: 300;
+  line-height: calc(28/23);
+  overflow: hidden;
+}
+
+.article-card__blurb {
+  @include copy($color: 'grey');
+  @include m(0);
+  @include mb(3);
+  font-size: rem(14px);
+  height: rem(80px);
+  overflow: hidden;
+}
+
+.article-card__link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: rem(14px);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: rem(26px);
+
+  @include v2-icon('chevron', $after: true, $offset-descenders: true) {
+    @include ml(1);
+    display: inline-block;
+    font-size: rem(12px);
+  }
+}
+
+
+/* === Media Queries: 1, 2 and 3 col        === */
+/* === + a fixed at 3 column modifier class === */
+
+@media (min-width: 320px) and (max-width: 619px) {
+  .article-cards {
+    width: 300px;
+  }
+
+  .article-card {
+    @include mr(0);
+  }
+}
+
+@media (min-width: 630px) and (max-width: 929px) {
+  .article-cards {
+    width: 620px;
+  }
+}
+
+@media (min-width: 940px) {
+  .article-cards--limited-to-three-columns {
+    width: 930px;
+  }
+}
