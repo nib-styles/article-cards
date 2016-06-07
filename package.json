@@ -1,6 +1,6 @@
 {
   "name": "@nib-styles/article-cards",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main.css": "index.scss",
   "repository": {
     "type": "git",
